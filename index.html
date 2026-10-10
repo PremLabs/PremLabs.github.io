@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="PremLabs — practical software engineering, data structures and algorithms, system design, DevOps, and AI learning projects by Prem Sarojanand.">
+  <title>PremLabs — Build. Learn. Share.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:dark;--bg:#0b1020;--panel:#111a2e;--line:#24314a;--text:#f2f5fb;--muted:#a8b4c9;--accent:#8cf0c5;--accent2:#8ba9ff}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 78% 0%,#1c3150 0,transparent 35%),var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{padding:24px 0;border-bottom:1px solid #ffffff12}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.04em;font-size:1.15rem}.mark{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--accent);color:#09111d;font-family:"DM Mono",monospace;font-weight:500}.navlinks{display:flex;gap:24px;color:var(--muted);font-size:.9rem}.navlinks a:hover,.textlink:hover{color:var(--accent)}
+    .hero{padding:92px 0 76px;display:grid;grid-template-columns:1.35fr .65fr;align-items:center;gap:60px}.eyebrow{font-family:"DM Mono",monospace;color:var(--accent);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}.hero h1{font-size:clamp(3rem,7vw,5.8rem);line-height:.99;letter-spacing:-.075em;margin:20px 0 24px;max-width:780px}.hero h1 span{color:var(--accent)}.hero p{font-size:1.08rem;color:var(--muted);max-width:640px;margin:0 0 28px}.actions{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 17px;border-radius:12px;font-weight:700;font-size:.92rem;border:1px solid var(--line);transition:transform .2s,border-color .2s}.btn:hover{transform:translateY(-2px);border-color:var(--accent)}.btn.primary{background:var(--accent);border-color:var(--accent);color:#07131b}.terminal{border:1px solid var(--line);background:#0a0f1cdd;border-radius:18px;padding:22px;box-shadow:0 24px 80px #0005;transform:rotate(1.5deg)}.terminal-top{display:flex;gap:7px;margin-bottom:20px}.dot{width:8px;height:8px;border-radius:50%;background:#42516a}.terminal pre{white-space:pre-wrap;overflow-wrap:anywhere;font: .82rem/1.9 "DM Mono",monospace;color:#bdc9dc;margin:0}.green{color:var(--accent)}.blue{color:var(--accent2)}
+    section{padding:54px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:25px}.section-head h2{font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.06em;line-height:1.1;margin:8px 0 0}.section-head p{color:var(--muted);max-width:430px;margin:0;font-size:.94rem}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{display:flex;flex-direction:column;min-height:242px;padding:23px;border-radius:17px;border:1px solid var(--line);background:linear-gradient(145deg,#141f35,#0f1728);transition:transform .2s,border-color .2s}.card:hover{transform:translateY(-4px);border-color:#648b9a}.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:23px}.iconbox{width:43px;height:43px;display:grid;place-items:center;border:1px solid #ffffff18;background:#ffffff08;border-radius:13px;font-size:1.25rem}.tag{font: .68rem "DM Mono",monospace;color:var(--accent);border:1px solid #8cf0c544;border-radius:99px;padding:5px 8px}.card h3{margin:0 0 8px;font-size:1.15rem;letter-spacing:-.03em}.card p{margin:0 0 20px;color:var(--muted);font-size:.9rem}.card .textlink{margin-top:auto;color:var(--accent);font-weight:700;font-size:.88rem}.about{display:grid;grid-template-columns:.75fr 1.25fr;gap:55px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:58px 0}.about h2{font-size:2rem;line-height:1.15;letter-spacing:-.055em;margin:10px 0}.about p{color:var(--muted);margin:0 0 15px}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.chip{font-size:.78rem;color:#d4deee;border:1px solid var(--line);padding:6px 10px;border-radius:99px}.cta{margin:52px 0 70px;padding:32px;border:1px solid #8cf0c544;border-radius:20px;background:linear-gradient(120deg,#142b35,#121a2c 75%);display:flex;justify-content:space-between;align-items:center;gap:25px}.cta h2{font-size:1.8rem;letter-spacing:-.05em;margin:0 0 5px}.cta p{color:var(--muted);margin:0}.cta .btn{white-space:nowrap}footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--muted);font-size:.82rem}.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}footer a{color:var(--text)}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;gap:38px;padding:65px 0 45px}.terminal{max-width:520px;transform:none}.grid{grid-template-columns:repeat(2,1fr)}.about{grid-template-columns:1fr;gap:20px}.section-head{align-items:start;flex-direction:column}.cta{align-items:flex-start;flex-direction:column}}
+    @media(max-width:540px){.wrap{width:min(100% - 28px,1120px)}.navlinks{gap:13px;font-size:.78rem}.navlinks a:nth-child(2){display:none}.grid{grid-template-columns:1fr}.hero h1{font-size:3.25rem}.card{min-height:210px}.cta{padding:24px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="PremLabs home"><span class="mark">PL</span><span>PremLabs</span></a>
+      <nav class="navlinks" aria-label="Main navigation"><a href="#projects">Projects</a><a href="#about">About</a><a href="https://github.com/PremLabs" target="_blank" rel="noreferrer">GitHub ↗</a></nav>
+    </div>
+  </header>
+  <main id="top">
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow">An engineering learning lab</div>
+        <h1>Build things.<br><span>Understand</span> deeply.</h1>
+        <p>Welcome to PremLabs — a home for practical software projects, interactive learning tools, and notes from the journey across software engineering, system design, DevOps, and AI.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore projects <span aria-hidden="true">↓</span></a>
+          <a class="btn" href="https://github.com/PremLabs" target="_blank" rel="noreferrer">Browse GitHub ↗</a>
+        </div>
+      </div>
+      <div class="terminal" aria-label="Code terminal illustration">
+        <div class="terminal-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <pre><span class="blue">const</span> lab = {
+  learn: <span class="green">"every day"</span>,
+  build: <span class="green">"real projects"</span>,
+  share: <span class="green">"what works"</span>
+};
+
+<span class="blue">while</span> (curious) {
+  experiment();
+  improve();
+  repeat();
+}</pre>
+      </div>
+    </div>
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Explore the lab</div><h2>Projects & learning paths</h2></div>
+          <p>Small, practical steps toward stronger engineering fundamentals. More learning tracks will be added as they take shape.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <div class="card-top"><div class="iconbox" aria-hidden="true">⌘</div><span class="tag">LIVE PROJECT</span></div>
+            <h3>Data Structures & Algorithms</h3>
+            <p>Learn sorting algorithms through interactive visualizations, step controls, counters, and Python examples.</p>
+            <a class="textlink" href="https://premlabs.github.io/datastructure/" target="_blank" rel="noreferrer">Open DSA Playground ↗</a>
+          </article>
+          <article class="card">
+            <div class="card-top"><div class="iconbox" aria-hidden="true">↗</div><span class="tag">PORTFOLIO</span></div>
+            <h3>Prem Sarojanand</h3>
+            <p>Professional background, selected engineering work, technical skills, and current learning goals.</p>
+            <a class="textlink" href="https://premlabs.github.io/.premsarojanand/" target="_blank" rel="noreferrer">View portfolio ↗</a>
+          </article>
+          <article class="card">
+            <div class="card-top"><div class="iconbox" aria-hidden="true">⌘</div><span class="tag">COMING NEXT</span></div>
+            <h3>System Design</h3>
+            <p>Architecture concepts, trade-offs, scalability patterns, and practical design exercises.</p>
+            <a class="textlink" href="https://github.com/orgs/PremLabs/repositories" target="_blank" rel="noreferrer">Explore organization repos ↗</a>
+          </article>
+          <article class="card">
+            <div class="card-top"><div class="iconbox" aria-hidden="true">⚙</div><span class="tag">COMING NEXT</span></div>
+            <h3>DevOps & Cloud</h3>
+            <p>Deployment workflows, CI/CD, containers, cloud infrastructure, and repeatable operations.</p>
+            <a class="textlink" href="https://github.com/orgs/PremLabs/repositories" target="_blank" rel="noreferrer">Explore organization repos ↗</a>
+          </article>
+          <article class="card">
+            <div class="card-top"><div class="iconbox" aria-hidden="true">⌁</div><span class="tag">COMING NEXT</span></div>
+            <h3>Backend Engineering</h3>
+            <p>API design, databases, reliability, application architecture, and production lessons.</p>
+            <a class="textlink" href="https://github.com/orgs/PremLabs/repositories" target="_blank" rel="noreferrer">Explore organization repos ↗</a>
+          </article>
+          <article class="card">
+            <div class="card-top"><div class="iconbox" aria-hidden="true">✳</div><span class="tag">COMING NEXT</span></div>
+            <h3>AI & Applied Learning</h3>
+            <p>Experiments and approachable projects that connect AI concepts with useful applications.</p>
+            <a class="textlink" href="https://github.com/orgs/PremLabs/repositories" target="_blank" rel="noreferrer">Explore organization repos ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <div class="wrap about">
+        <div><div class="eyebrow">The person behind the lab</div><h2>Experience in practice.<br>Curiosity by design.</h2></div>
+        <div>
+          <p>I'm Prem Sarojanand, a software engineering professional based in Ahmedabad, India. My work spans backend systems, APIs, application architecture, delivery, and production operations.</p>
+          <p>PremLabs brings my projects and learning resources together in one place. The goal is to share useful, hands-on material that helps developers move from reading concepts to understanding how they work in practice.</p>
+          <div class="chips"><span class="chip">Backend Engineering</span><span class="chip">System Design</span><span class="chip">DevOps & Cloud</span><span class="chip">DSA</span><span class="chip">AI Experiments</span><span class="chip">Learning in Public</span></div>
+          <div class="actions" style="margin-top:24px"><a class="btn" href="https://github.com/PremLabs" target="_blank" rel="noreferrer">PremLabs on GitHub ↗</a><a class="btn" href="https://www.linkedin.com/in/prem-sarojanand-92b698164/" target="_blank" rel="noreferrer">Connect on LinkedIn ↗</a></div>
+        </div>
+      </div>
+    </section>
+    <div class="wrap">
+      <div class="cta">
+        <div><h2>Learn in public. Build with purpose.</h2><p>Follow the repositories to see new projects, improvements, and learning resources.</p></div>
+        <a class="btn primary" href="https://github.com/PremLabs" target="_blank" rel="noreferrer">Follow PremLabs ↗</a>
+      </div>
+    </div>
+  </main>
+  <footer><div class="wrap foot"><span>© <span id="year">2026</span> PremLabs · Built to learn and share.</span><span><a href="https://github.com/PremLabs">GitHub</a> · <a href="https://github.com/PremLabs/PremLabs.github.io">Source code</a></span></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
