@@ -1,40 +1,29 @@
-# PremLabs
+# PremLabs — Prem Sarojanand
 
-**Build things. Understand deeply.**
+Portfolio of Prem Sarojanand, senior backend engineer (Java, Node.js, Python) building LLM-powered products.
 
-PremLabs is the central hub for practical software projects, interactive learning tools, and engineering resources by Prem Sarojanand.
+🌐 **https://premlabs.github.io/**
 
-🌐 **Website:** https://premlabs.github.io/  
-💻 **GitHub organization:** https://github.com/PremLabs
+## Pages
 
-## Explore
+- `/` — profile, skills by language, filterable project catalog, contact
+- `/projects/juno-health/` — Juno Health case study with an architecture diagram and module catalog
+- `/datastructure/` — 13 interactive DSA tutorials (served from the [datastructure](https://github.com/PremLabs/datastructure) repo)
+- `404.html` — site-wide not-found page (GitHub Pages uses it for every PremLabs project site)
 
-- **[Data Structures & Algorithms Playground](https://premlabs.github.io/datastructure/)** — interactive sorting visualizations, controls, counters, and Python examples.
-- **[Prem Sarojanand portfolio](https://premlabs.github.io/.premsarojanand/)** — professional background, selected work, technical skills, and learning goals.
-- **System Design** — planned learning track for architecture concepts, trade-offs, and scalability.
-- **DevOps & Cloud** — planned hands-on deployment, CI/CD, containers, and cloud resources.
-- **Backend Engineering** — planned resources for API design, databases, and production systems.
-- **AI & Applied Learning** — planned experiments and practical AI projects.
+## SEO files
 
-## Publish the website
+- `robots.txt` lists both sitemaps
+- `sitemap.xml` covers this repo's pages; `/datastructure/sitemap.xml` covers the tutorials
+- `llms.txt` summarises the site for AI search tools
+- Every page has a canonical URL, Open Graph/Twitter cards and JSON-LD (`ProfilePage` + `Person` on the home page, `Article` on the case study)
 
-This repository is named `PremLabs.github.io`, so GitHub Pages can serve the organization homepage at **https://premlabs.github.io/**.
+**After deploying:** add `https://premlabs.github.io/` to [Google Search Console](https://search.google.com/search-console), submit both sitemaps, and request indexing for the home page and the Juno Health page. Do the same in Bing Webmaster Tools.
 
-1. Open this repository's **Settings → Pages**.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Select `main` and the `/(root)` folder, then save.
-4. Wait for the deployment to complete and open https://premlabs.github.io/.
+## Editing
 
-The site is a static HTML page; no build step is required.
+Plain HTML and one stylesheet (`assets/site.css`), no build step. To add a project, copy an `<li class="item">` in `index.html` and set `data-tags` to any of `java node python ai devops` so the filters pick it up.
 
-## Roadmap
+## Publishing
 
-- [x] Create the central PremLabs landing page
-- [x] Link the existing DSA playground and portfolio
-- [ ] Add focused repositories for system design, DevOps, backend engineering, and AI
-- [ ] Publish tutorials and reusable project examples
-- [ ] Add a consistent README, demo link, and contribution notes to each learning repository
-
-## Guiding principle
-
-Learn by building, explain what you learn, and make the result useful to other developers.
+Settings → Pages → Deploy from a branch → `main` / root.

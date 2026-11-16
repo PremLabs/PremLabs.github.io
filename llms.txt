@@ -1,0 +1,27 @@
+# PremLabs — Prem Sarojanand
+
+> Prem Sarojanand is a senior software engineer and technical lead based in Ahmedabad, India, with 13+ years of experience in Java, Node.js, Python, PHP and C#. He builds backend systems, full-stack applications, DevOps pipelines and LLM-powered products, and is available for remote roles and freelance work. Contact: psarojanand@gmail.com
+
+## Profile and projects
+- [Portfolio and project catalog](https://premlabs.github.io/): skills by language (Java, Node.js, Python) and selected work, including an AI-powered CRM, a POS platform used in 36+ stores, a microservices redesign that cut API response times by 65%, and Jenkins/Docker CI/CD.
+- [Juno Health case study](https://premlabs.github.io/projects/juno-health/): AI preventive healthcare platform (Node.js backend, Flutter app, doctor web app, OpenAI and Claude APIs with outputs validated against patient profiles). 1,000+ downloads, 3 B2B clients.
+
+## Tutorials
+- [Data Structures & Algorithms, made visible](https://premlabs.github.io/datastructure/): 13 free interactive tutorials with code in Python, Java and JavaScript.
+- [Big-O Notation](https://premlabs.github.io/datastructure/big-o/)
+- [Arrays](https://premlabs.github.io/datastructure/arrays/)
+- [Linked Lists](https://premlabs.github.io/datastructure/linked-list/)
+- [Stacks](https://premlabs.github.io/datastructure/stack/)
+- [Queues](https://premlabs.github.io/datastructure/queue/)
+- [Hash Tables](https://premlabs.github.io/datastructure/hash-table/)
+- [Binary Trees & Traversals](https://premlabs.github.io/datastructure/binary-tree/)
+- [Binary Search Trees](https://premlabs.github.io/datastructure/binary-search-tree/)
+- [Heaps & Priority Queues](https://premlabs.github.io/datastructure/heap/)
+- [Tries](https://premlabs.github.io/datastructure/trie/)
+- [Graphs: BFS & DFS](https://premlabs.github.io/datastructure/graph/)
+- [Binary Search](https://premlabs.github.io/datastructure/binary-search/)
+- [Sorting Algorithms](https://premlabs.github.io/datastructure/sorting-algorithms/)
+
+## Elsewhere
+- [GitHub](https://github.com/PremLabs)
+- [YouTube](https://www.youtube.com/@PremLabs-s05w)

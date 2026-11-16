@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juno Health Case Study — Node.js, Flutter &amp; LLM Healthcare Platform | Prem Sarojanand</title>
+  <meta name="description" content="How the Node.js backend, doctor web app and validated LLM features of Juno Health were built. AI preventive healthcare: 1,000+ downloads, 3 B2B clients.">
+  <meta name="author" content="Prem Sarojanand">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://premlabs.github.io/projects/juno-health/">
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="PremLabs">
+  <meta property="og:title" content="Juno Health — AI preventive healthcare platform (case study)">
+  <meta property="og:description" content="Node.js backend, Flutter app, doctor web app and LLM features with validated outputs. 1,000+ downloads, 3 B2B clients.">
+  <meta property="og:url" content="https://premlabs.github.io/projects/juno-health/">
+  <meta property="og:image" content="https://premlabs.github.io/assets/og-juno.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://premlabs.github.io/assets/og-juno.png">
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/site.css?v=2">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"Article","@id":"https://premlabs.github.io/projects/juno-health/#article","headline":"Juno Health: building an AI preventive healthcare platform","description":"Case study of the Node.js backend, doctor web app, website and LLM features built for Juno Health.","url":"https://premlabs.github.io/projects/juno-health/","image":"https://premlabs.github.io/assets/og-juno.png","datePublished":"2026-11-16","dateModified":"2026-11-16","inLanguage":"en","author":{"@type":"Person","@id":"https://premlabs.github.io/#person","name":"Prem Sarojanand","url":"https://premlabs.github.io/"},"publisher":{"@type":"Person","@id":"https://premlabs.github.io/#person"},"about":{"@type":"SoftwareApplication","name":"Juno Health","applicationCategory":"HealthApplication","operatingSystem":"Android, iOS, Web","description":"Preventive healthcare platform that alerts users early to diabetes, obesity and heart risks and provides AI-generated exercise plans, meal plans and health insights."},"keywords":"Node.js, Flutter, LLM, OpenAI API, Claude API, healthcare, backend engineering"},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Prem Sarojanand","item":"https://premlabs.github.io/"},
+      {"@type":"ListItem","position":2,"name":"Projects","item":"https://premlabs.github.io/#work"},
+      {"@type":"ListItem","position":3,"name":"Juno Health","item":"https://premlabs.github.io/projects/juno-health/"}]}
+  ]}
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MZDBK7RPZJ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MZDBK7RPZJ');</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/">PremLabs</a>
+  <nav class="links" aria-label="Main">
+    <a href="/#hire">Skills</a>
+    <a href="/#work">Work</a>
+    <a class="opt" href="/datastructure/">DSA tutorials</a>
+    <a class="pill" href="/#contact">Hire me</a>
+  </nav>
+</div></header>
+
+<main id="main">
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Prem Sarojanand</a> › <a href="/#work">Projects</a> › Juno Health</p>
+    <p class="eyebrow">Case study · Healthcare · Node.js + LLM</p>
+    <h1 class="display">Juno Health</h1>
+    <p class="lede">A preventive healthcare platform that alerts people early to diabetes, obesity and heart risks, and gives them personalised exercise plans, meal plans and health insights. I built most of the software behind it, and made sure the AI never answered without being checked.</p>
+    <dl class="facts">
+      <div><dt>My role</dt><dd>Backend &amp; full-stack engineer</dd></div>
+      <div><dt>Core stack</dt><dd>Node.js · Flutter · LLM APIs</dd></div>
+      <div><dt>Adoption</dt><dd>1,000+ downloads</dd></div>
+      <div><dt>Business</dt><dd>3 B2B clients</dd></div>
+    </dl>
+  </div>
+
+  <section aria-labelledby="problem">
+    <div class="wrap prose">
+      <h2 id="problem">The problem</h2>
+      <p>Conditions such as diabetes, obesity and heart disease are far easier to manage when they are caught early, yet most people only see a doctor once symptoms appear. Juno Health set out to spot the warning signs sooner and to turn each person's health data into practical guidance they would actually follow.</p>
+      <p>Generative AI made the personalised guidance possible. It also created the main engineering risk: a language model can produce advice that sounds confident and is wrong for a particular patient. In healthcare, that is not acceptable.</p>
+      <h2 id="approach" style="margin-top:2.4rem">The approach</h2>
+      <p>One Node.js backend sits at the centre and serves every client: the Flutter mobile app, a web app for doctors and the public website. AI features run through that backend rather than from the apps directly, so every response from the OpenAI and Claude APIs passes the same gate: <strong>it is validated against the patient's profile before anyone sees it.</strong></p>
+    </div>
+    <div class="wrap">
+      <div class="diagram" role="img" aria-label="Architecture: the Flutter mobile app, doctor web app and Juno website all call the Node.js backend API. The backend sends requests to the LLM layer using OpenAI and Claude APIs, and each AI output is validated against the patient profile before being returned as plans, insights and risk alerts.">
+        <svg viewBox="0 0 900 330" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z"/></marker></defs>
+          <rect x="20" y="30" width="200" height="66" rx="14"/><text x="120" y="60">Mobile app</text><text class="s" x="120" y="80">Flutter · patients</text>
+          <rect x="20" y="132" width="200" height="66" rx="14"/><text x="120" y="162">Doctor web app</text><text class="s" x="120" y="182">doctors</text>
+          <rect x="20" y="234" width="200" height="66" rx="14"/><text x="120" y="264">Juno website</text><text class="s" x="120" y="284">public</text>
+          <rect class="core" x="330" y="112" width="220" height="106" rx="16"/><text x="440" y="155">Backend API</text><text class="s" x="440" y="177">Node.js · single source of truth</text>
+          <rect class="ai" x="660" y="40" width="220" height="86" rx="14"/><text x="770" y="76">LLM layer</text><text class="s" x="770" y="98">OpenAI · Claude APIs, tuned</text>
+          <rect class="ai" x="660" y="204" width="220" height="86" rx="14"/><text x="770" y="240">Validation gate</text><text class="s" x="770" y="262">checked against patient profile</text>
+          <path d="M222 63 C280 63 280 140 328 145"/><path d="M222 165 L328 165"/><path d="M222 267 C280 267 280 190 328 185"/>
+          <path d="M552 140 C600 140 610 83 658 83"/>
+          <path d="M770 128 L770 202"/>
+          <path d="M658 247 C610 247 600 195 552 192"/>
+        </svg>
+      </div>
+      <p class="muted" style="font-size:.9rem;margin:.8rem 0 0">Simplified architecture. AI output flows back through the validation gate before reaching any app.</p>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="catalog-title">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Module catalog</p>
+        <h2 id="catalog-title" class="title">What I delivered.</h2>
+        <p class="lede">Seven pieces of the platform, with my exact role in each. Filter by area.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter modules">
+        <button type="button" data-f="all" aria-pressed="true">All</button>
+        <button type="button" data-f="backend" aria-pressed="false">Backend</button>
+        <button type="button" data-f="ai" aria-pressed="false">AI</button>
+        <button type="button" data-f="web" aria-pressed="false">Web</button>
+        <button type="button" data-f="mobile" aria-pressed="false">Mobile</button>
+        <button type="button" data-f="data" aria-pressed="false">Data</button>
+        <span class="count" id="count" aria-live="polite">7 modules</span>
+      </div>
+      <ul class="catalog" id="catalog">
+        <li class="item module featured" data-tags="backend" style="view-transition-name:m1">
+          <span class="kind">01 · Backend</span>
+          <h3>Backend API</h3>
+          <p>The Node.js service that powers the whole platform: it serves the mobile app, the doctor web app and the website, and it is the only place that talks to the AI providers.</p>
+          <p class="role"><b>My role:</b> developed the complete backend.</p>
+          <div class="chips"><span class="chip">Node.js</span><span class="chip">REST API</span><span class="chip">Integrations</span></div>
+          <span class="status"><i aria-hidden="true"></i>In production</span>
+        </li>
+        <li class="item module" data-tags="ai backend" style="view-transition-name:m2">
+          <span class="kind">02 · AI</span>
+          <h3>Plans &amp; health insights</h3>
+          <p>Personalised exercise plans, meal plans and health insights generated with the OpenAI and Claude APIs.</p>
+          <p class="role"><b>My role:</b> integrated the LLM APIs into the backend.</p>
+          <div class="chips"><span class="chip">OpenAI API</span><span class="chip">Claude API</span></div>
+        </li>
+        <li class="item module" data-tags="ai" style="view-transition-name:m3">
+          <span class="kind">03 · AI safety</span>
+          <h3>LLM tuning &amp; validation</h3>
+          <p>Model tuning, plus a check that compares every AI output with the patient's profile before it is shown, so advice fits the person receiving it.</p>
+          <p class="role"><b>My role:</b> tuned the LLMs and built the validation.</p>
+          <div class="chips"><span class="chip">LLM tuning</span><span class="chip">Output validation</span></div>
+        </li>
+        <li class="item module" data-tags="ai mobile" style="view-transition-name:m4">
+          <span class="kind">04 · Product</span>
+          <h3>Early risk alerts</h3>
+          <p>Early warnings for diabetes, obesity and heart risks: the core promise of the platform.</p>
+          <p class="role"><b>My role:</b> backend and AI pipeline behind the alerts.</p>
+          <div class="chips"><span class="chip">Diabetes</span><span class="chip">Obesity</span><span class="chip">Heart risk</span></div>
+        </li>
+        <li class="item module" data-tags="mobile" style="view-transition-name:m5">
+          <span class="kind">05 · Mobile</span>
+          <h3>Mobile app</h3>
+          <p>The patient-facing Flutter app, downloaded more than 1,000 times.</p>
+          <p class="role"><b>My role:</b> fixed the mobile app code.</p>
+          <div class="chips"><span class="chip">Flutter</span><span class="chip">1,000+ downloads</span></div>
+        </li>
+        <li class="item module" data-tags="web" style="view-transition-name:m6">
+          <span class="kind">06 · Web</span>
+          <h3>Doctor web app &amp; website</h3>
+          <p>A web application for the doctors on the platform, and the public Juno website.</p>
+          <p class="role"><b>My role:</b> built both.</p>
+          <div class="chips"><span class="chip">Web app</span><span class="chip">Website</span></div>
+        </li>
+        <li class="item module" data-tags="data" style="view-transition-name:m7">
+          <span class="kind">07 · Data</span>
+          <h3>Doctor data</h3>
+          <p>The doctor information the platform runs on.</p>
+          <p class="role"><b>My role:</b> collected the doctor data.</p>
+          <div class="chips"><span class="chip">Data collection</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="results">
+    <div class="wrap prose">
+      <h2 id="results">Results and lessons</h2>
+      <ul>
+        <li><strong>1,000+ downloads and 3 business clients</strong>, served by one backend.</li>
+        <li><strong>One gateway for AI.</strong> Routing every model call through the backend meant tuning, validation and provider changes happen in one place, invisible to the apps.</li>
+        <li><strong>Validation is a feature, not overhead.</strong> Checking AI output against the patient profile is what makes LLM-generated health guidance something a business client can put in front of its users.</li>
+      </ul>
+      <p>The same pattern applies well beyond healthcare: wherever an LLM's answer has consequences, put a deterministic check between the model and the user.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="band contact" aria-labelledby="contact-title">
+    <p class="eyebrow">Need this for your product?</p>
+    <h2 id="contact-title" class="title">Let's talk about your backend.</h2>
+    <p class="lede">I'm available for Java, Node.js and Python roles and for freelance LLM integration work.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:psarojanand@gmail.com?subject=Juno%20Health%20case%20study%20-%20opportunity">Email me</a>
+      <a class="btn ghost" href="/#work">More projects</a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 Prem Sarojanand · PremLabs</span>
+  <span><a href="https://github.com/PremLabs" rel="me">GitHub</a> · <a href="https://www.youtube.com/@PremLabs-s05w" rel="me">YouTube</a> · <a href="https://www.instagram.com/tech.coders/" rel="me">Instagram</a></span>
+</div></footer>
+
+<script>
+(() => {
+  const btns = [...document.querySelectorAll('.filters button')];
+  const items = [...document.querySelectorAll('#catalog .item')];
+  const count = document.getElementById('count');
+  const still = matchMedia('(prefers-reduced-motion: reduce)');
+  const apply = f => {
+    let n = 0;
+    items.forEach(it => { const on = f === 'all' || it.dataset.tags.split(' ').includes(f); it.hidden = !on; if (on) n++; });
+    btns.forEach(b => b.setAttribute('aria-pressed', b.dataset.f === f));
+    count.textContent = n + (n === 1 ? ' module' : ' modules');
+  };
+  btns.forEach(b => b.addEventListener('click', () => {
+    const run = () => apply(b.dataset.f);
+    if (document.startViewTransition && !still.matches) document.startViewTransition(run); else run();
+  }));
+})();
+</script>
+</body>
+</html>
