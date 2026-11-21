@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Proposal — Luxury Travel Consultancy</title>
+<meta name="description" content="Website design proposal with three creative directions for a luxury travel consultancy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Italiana&family=Montserrat:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   EDIT HERE: client name, your details and prices are in the
+   CONFIG object at the bottom of this file (in <script>).
+   ========================================================= */
+:root{
+  --ink:#1c1a17; --ink-soft:#4a453e; --muted:#8a8378;
+  --paper:#f7f3ec; --paper-2:#efe8dc; --line:#ddd3c3;
+  --gold:#a8834a; --gold-soft:#c9a96e;
+  --serif:"Cormorant Garamond", Georgia, serif;
+  --sans:"Inter", system-ui, sans-serif;
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(34px,4.4vw,54px);margin:14px 0 18px}
+h3{font-size:28px}
+p.lead{font-size:18px;color:var(--ink-soft);max-width:720px}
+section{padding:110px 0;border-top:1px solid var(--line)}
+.num{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:20px;margin-right:10px}
+
+/* ---------- Top bar ---------- */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(247,243,236,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:20px}
+.brandmark{font-family:var(--serif);font-size:20px;letter-spacing:.04em}
+.brandmark span{color:var(--gold)}
+.topnav{display:flex;gap:26px;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.topnav a{text-decoration:none;color:var(--ink-soft)}
+.topnav a:hover{color:var(--gold)}
+.tools{display:flex;gap:10px;align-items:center}
+.toggle{display:flex;border:1px solid var(--line);border-radius:30px;overflow:hidden;font-size:12px}
+.toggle button{background:none;border:0;padding:7px 14px;cursor:pointer;font-family:var(--sans);color:var(--ink-soft)}
+.toggle button.on{background:var(--ink);color:var(--paper)}
+.btn-print{border:1px solid var(--ink);background:none;padding:7px 16px;border-radius:30px;font-size:12px;cursor:pointer;font-family:var(--sans)}
+.btn-print:hover{background:var(--ink);color:var(--paper)}
+
+/* ---------- Cover ---------- */
+.cover{padding:120px 0 100px;border-top:0;position:relative;overflow:hidden}
+.cover h1{font-size:clamp(48px,7.5vw,104px);font-weight:300;margin:26px 0 30px;max-width:980px}
+.cover h1 em{color:var(--gold);font-style:italic}
+.cover-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:70px;padding-top:28px;border-top:1px solid var(--line)}
+.cover-meta div small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.cover-meta div{font-family:var(--serif);font-size:22px}
+.cover-orb{position:absolute;right:-180px;top:-120px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#e9d3a8,#c9a96e 45%,transparent 70%);opacity:.35;filter:blur(10px);pointer-events:none}
+
+/* ---------- Goals ---------- */
+.goals{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:56px}
+.goal{background:var(--paper);padding:34px 28px}
+.goal b{font-family:var(--serif);font-weight:400;font-size:24px;display:block;margin-bottom:10px}
+.goal p{font-size:14.5px;color:var(--ink-soft)}
+
+/* ---------- Option sections ---------- */
+.opt-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:46px}
+.opt-tag{display:inline-flex;gap:10px;align-items:center}
+.pill{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:6px 12px;border-radius:30px;border:1px solid var(--gold);color:var(--gold);font-weight:500}
+.pill.solid{background:var(--gold);color:#fff}
+.opt-head h2{margin-bottom:8px}
+.opt-head .tagline{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--ink-soft)}
+.price-box{text-align:right}
+.price-box small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.price-box .price{font-family:var(--serif);font-size:48px;line-height:1.1}
+.price-box .sub{font-size:13px;color:var(--muted)}
+
+.opt-body{display:grid;grid-template-columns:1fr 1fr 1fr;gap:44px;margin-top:54px}
+.opt-body h4{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--gold);margin-bottom:16px}
+.opt-body p{font-size:15px;color:var(--ink-soft)}
+.opt-body ul{list-style:none}
+.opt-body li{font-size:14.5px;color:var(--ink-soft);padding:8px 0;border-bottom:1px solid var(--line);display:flex;gap:10px}
+.opt-body li::before{content:"—";color:var(--gold)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:44px;border:1px solid var(--line)}
+.facts div{padding:20px 22px;border-right:1px solid var(--line)}
+.facts div:last-child{border-right:0}
+.facts small{display:block;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.facts span{font-family:var(--serif);font-size:21px}
+.dna{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.dna span{font-size:12px;border:1px solid var(--line);padding:5px 11px;border-radius:20px;color:var(--ink-soft)}
+
+/* ---------- Browser frame for mockups ---------- */
+.browser{border-radius:12px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(40,30,15,.35),0 0 0 1px rgba(0,0,0,.06);background:#fff}
+.chrome{height:34px;background:#ece7df;display:flex;align-items:center;gap:7px;padding:0 14px}
+.chrome i{width:10px;height:10px;border-radius:50%;background:#d6cfc4}
+.chrome .url{margin-left:16px;flex:1;max-width:340px;height:20px;border-radius:10px;background:#f8f5f0;font-size:10.5px;color:#9b9488;display:flex;align-items:center;padding:0 12px;font-family:var(--sans)}
+.screen{container-type:inline-size;position:relative;aspect-ratio:16/9.4;overflow:hidden}
+
+/* ===== MOCKUP A — The Journal (editorial, quiet luxury) ===== */
+.mA{background:#f6f1e7;color:#1d1b18;font-family:"Cormorant Garamond",serif;height:100%;display:flex;flex-direction:column}
+.mA-nav{display:flex;justify-content:space-between;align-items:center;padding:2.2cqw 4cqw;font-family:"Inter",sans-serif;font-size:1cqw;letter-spacing:.25em;text-transform:uppercase;border-bottom:1px solid #d9cfbe}
+.mA-logo{font-family:"Cormorant Garamond",serif;font-size:2.1cqw;letter-spacing:.35em}
+.mA-hero{display:grid;grid-template-columns:1.15fr 1fr;gap:4cqw;padding:3.6cqw 4cqw 0;flex:1}
+.mA-hero small{font-family:"Inter",sans-serif;font-size:.95cqw;letter-spacing:.3em;text-transform:uppercase;color:#9a7b4f}
+.mA-hero h5{font-weight:300;font-size:6.2cqw;line-height:.98;margin:1.6cqw 0;letter-spacing:-.02em}
+.mA-hero h5 em{font-style:italic}
+.mA-hero p{font-family:"Inter",sans-serif;font-size:1.15cqw;color:#5a544a;max-width:30cqw;line-height:1.7}
+.mA-link{display:inline-block;margin-top:2cqw;font-family:"Inter",sans-serif;font-size:1cqw;letter-spacing:.25em;text-transform:uppercase;border-bottom:1px solid #1d1b18;padding-bottom:.4cqw}
+.mA-arch{border-radius:20cqw 20cqw 0 0;overflow:hidden;position:relative;background:linear-gradient(180deg,#f1d9bd 0%,#e7b996 38%,#cf9479 52%,#80939a 53%,#4c6673 100%)}
+.mA-arch::before{content:"";position:absolute;left:50%;top:34%;width:7cqw;height:7cqw;border-radius:50%;background:#fbe9cf;transform:translateX(-50%);opacity:.9}
+.mA-arch::after{content:"";position:absolute;inset:auto 0 0 0;height:30%;background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(0,0,0,.25))}
+.mA-cap{position:absolute;right:4cqw;bottom:1.6cqw;font-family:"Inter",sans-serif;font-size:.85cqw;letter-spacing:.2em;color:#fff;text-transform:uppercase;z-index:2}
+.mA-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4cqw;padding:2.2cqw 4cqw 2.4cqw;border-top:1px solid #d9cfbe;margin-top:0}
+.mA-strip div{display:flex;gap:1.4cqw;align-items:center}
+.mA-strip i{width:5.5cqw;height:4cqw;flex:none;display:block}
+.mA-strip b{font-weight:400;font-size:1.6cqw;display:block;line-height:1.1}
+.mA-strip span{white-space:nowrap;font-family:"Inter",sans-serif;font-size:.8cqw;letter-spacing:.2em;text-transform:uppercase;color:#9a7b4f}
+
+/* ===== MOCKUP B — The Voyage (cinematic, immersive) ===== */
+.mB{height:100%;position:relative;color:#f4ead7;font-family:"Montserrat",sans-serif;overflow:hidden;
+  background:
+   radial-gradient(circle at 50% 66%,rgba(255,206,140,.95) 0 3.2cqw,rgba(255,170,90,.4) 3.3cqw,transparent 18cqw),
+   linear-gradient(180deg,#0f0f1c 0%,#2a1f35 30%,#7a3f45 56%,#d38a52 65%,#7c3f24 66%,#3a1c12 78%,#140b08 100%)}
+.mB-dune1,.mB-dune2{position:absolute;left:-10%;right:-10%;border-radius:50% 50% 0 0}
+.mB-dune1{bottom:-22%;height:52%;background:linear-gradient(180deg,#5a2c19,#1a0d08);transform:rotate(-3deg)}
+.mB-dune2{bottom:-30%;height:50%;left:30%;background:linear-gradient(180deg,#3b1d10,#0b0604);transform:rotate(4deg)}
+.mB-nav{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;padding:2.4cqw 4cqw;font-size:.95cqw;letter-spacing:.3em;text-transform:uppercase}
+.mB-logo{font-family:"Italiana",serif;font-size:2.2cqw;letter-spacing:.3em;color:#e8c98f}
+.mB-menu{display:flex;gap:1cqw;align-items:center}
+.mB-menu i{display:block;width:2.4cqw;height:1px;background:#f4ead7;box-shadow:0 .6cqw 0 #f4ead7}
+.mB-center{position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-bottom:8cqw}
+.mB-center small{font-size:.95cqw;letter-spacing:.5em;text-transform:uppercase;color:#e8c98f}
+.mB-center h5{font-family:"Italiana",serif;font-weight:400;font-size:8.4cqw;line-height:1;margin:1.2cqw 0 1.4cqw;letter-spacing:.04em;text-shadow:0 .6cqw 3cqw rgba(0,0,0,.4)}
+.mB-line{width:7cqw;height:1px;background:#e8c98f;margin-bottom:1.6cqw}
+.mB-play{display:flex;align-items:center;gap:1.2cqw;font-size:.95cqw;letter-spacing:.3em;text-transform:uppercase}
+.mB-play i{width:3.6cqw;height:3.6cqw;border:1px solid #e8c98f;border-radius:50%;position:relative;display:block}
+.mB-play i::after{content:"";position:absolute;left:42%;top:32%;border-left:1.1cqw solid #e8c98f;border-top:.7cqw solid transparent;border-bottom:.7cqw solid transparent}
+.mB-reel{position:absolute;z-index:3;left:4cqw;right:4cqw;bottom:2.6cqw;display:grid;grid-template-columns:repeat(4,1fr);gap:1.4cqw}
+.mB-reel div{height:7.4cqw;border:1px solid rgba(232,201,143,.35);position:relative;overflow:hidden}
+.mB-reel div span{position:absolute;left:1cqw;bottom:.8cqw;font-size:.8cqw;letter-spacing:.25em;text-transform:uppercase}
+.mB-reel div:nth-child(1){background:linear-gradient(160deg,#1e3b4d,#0b1820)}
+.mB-reel div:nth-child(2){background:linear-gradient(160deg,#3b4a2c,#141a0e)}
+.mB-reel div:nth-child(3){background:linear-gradient(160deg,#4d2a3c,#170b12)}
+.mB-reel div:nth-child(4){background:linear-gradient(160deg,#5a4a35,#1d150c)}
+.mB-scroll{position:absolute;z-index:3;right:4cqw;top:50%;writing-mode:vertical-rl;font-size:.8cqw;letter-spacing:.4em;text-transform:uppercase;color:#e8c98f;transform:translateY(-50%)}
+
+/* ===== MOCKUP C — The Concierge (interactive journey designer) ===== */
+.mC{height:100%;background:#fbfaf7;font-family:"DM Sans",sans-serif;color:#17312b;display:flex;flex-direction:column}
+.mC-nav{display:flex;justify-content:space-between;align-items:center;padding:1.8cqw 3.4cqw;border-bottom:1px solid #e9e5dc}
+.mC-logo{font-family:"Fraunces",serif;font-weight:600;font-size:1.9cqw}
+.mC-logo span{color:#c0794a}
+.mC-links{display:flex;gap:2.4cqw;font-size:1.05cqw;color:#56685f}
+.mC-cta{background:#17312b;color:#fff;font-size:1cqw;padding:.9cqw 1.8cqw;border-radius:5cqw}
+.mC-main{display:grid;grid-template-columns:1fr 1.25fr;gap:2.4cqw;padding:2.4cqw 3.4cqw;flex:1;min-height:0}
+.mC-panel{background:#fff;border:1px solid #ebe6dc;border-radius:1.6cqw;padding:2.2cqw;box-shadow:0 1.4cqw 3cqw -2cqw rgba(23,49,43,.18)}
+.mC-panel h6{font-family:"Fraunces",serif;font-weight:400;font-size:2.4cqw;line-height:1.1;margin-bottom:.6cqw}
+.mC-step{font-size:.85cqw;letter-spacing:.18em;text-transform:uppercase;color:#c0794a;font-weight:700}
+.mC-label{font-size:.95cqw;color:#7d8a83;margin:1.4cqw 0 .7cqw;font-weight:500}
+.mC-chips{display:flex;flex-wrap:wrap;gap:.7cqw}
+.mC-chips button{font-family:"DM Sans",sans-serif;font-size:1cqw;padding:.65cqw 1.3cqw;border-radius:5cqw;border:1px solid #dcd6ca;background:#fff;color:#17312b;cursor:pointer;transition:.2s}
+.mC-chips button.on{background:#17312b;color:#fff;border-color:#17312b}
+.mC-range{height:.5cqw;border-radius:1cqw;background:linear-gradient(90deg,#c0794a 62%,#eae4d8 62%);position:relative;margin-top:1.2cqw}
+.mC-range::after{content:"";position:absolute;left:62%;top:50%;width:1.6cqw;height:1.6cqw;border-radius:50%;background:#fff;border:2px solid #c0794a;transform:translate(-50%,-50%)}
+.mC-rangev{display:flex;justify-content:space-between;font-size:.85cqw;color:#7d8a83;margin-top:.9cqw}
+.mC-go{margin-top:1.8cqw;background:#c0794a;color:#fff;text-align:center;border-radius:5cqw;padding:1cqw;font-size:1.05cqw;font-weight:500}
+.mC-right{display:grid;grid-template-rows:1.15fr 1fr;gap:1.6cqw;min-height:0}
+.mC-map{border-radius:1.6cqw;position:relative;overflow:hidden;background:
+  radial-gradient(ellipse at 30% 40%,#d9e6dd 0 18%,transparent 19%),
+  radial-gradient(ellipse at 72% 60%,#d9e6dd 0 22%,transparent 23%),
+  radial-gradient(ellipse at 55% 20%,#d9e6dd 0 10%,transparent 11%),
+  linear-gradient(135deg,#e7eff0,#dbe7ea)}
+.mC-map svg{position:absolute;inset:0;width:100%;height:100%}
+.mC-maptag{position:absolute;left:1.4cqw;top:1.2cqw;background:#fff;border-radius:5cqw;padding:.5cqw 1.2cqw;font-size:.9cqw;font-weight:500;box-shadow:0 .4cqw 1cqw rgba(0,0,0,.08)}
+.mC-days{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2cqw}
+.mC-day{background:#fff;border:1px solid #ebe6dc;border-radius:1.2cqw;padding:1.3cqw;display:flex;flex-direction:column;gap:.5cqw}
+.mC-day i{display:block;height:4.4cqw;border-radius:.8cqw}
+.mC-day small{font-size:.8cqw;color:#c0794a;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.mC-day b{font-family:"Fraunces",serif;font-weight:400;font-size:1.3cqw;line-height:1.15}
+.mC-wa{position:absolute;right:2.2cqw;bottom:2.2cqw;background:#17312b;color:#fff;font-size:.95cqw;padding:.9cqw 1.6cqw;border-radius:5cqw;box-shadow:0 1cqw 2cqw -1cqw rgba(0,0,0,.4);display:flex;gap:.7cqw;align-items:center}
+.mC-wa::before{content:"";width:.8cqw;height:.8cqw;border-radius:50%;background:#5bd28a}
+
+/* ---------- Comparison ---------- */
+.compare{width:100%;border-collapse:collapse;margin-top:50px;font-size:14.5px}
+.compare th,.compare td{padding:16px 18px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.compare thead th{font-family:var(--serif);font-weight:400;font-size:24px;border-bottom:1px solid var(--ink)}
+.compare thead th small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.compare tbody th{font-weight:500;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);width:17%}
+.compare td{color:var(--ink-soft);width:27.6%}
+.compare tr.big td{font-family:var(--serif);font-size:24px;color:var(--ink)}
+.compare .rec{background:rgba(201,169,110,.09)}
+
+/* ---------- Included ---------- */
+.incl{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:50px;border-top:1px solid var(--line)}
+.incl div{padding:26px 26px 26px 0;border-bottom:1px solid var(--line)}
+.incl b{font-family:var(--serif);font-weight:500;font-size:21px;display:block;margin-bottom:6px}
+.incl p{font-size:14px;color:var(--ink-soft);padding-right:20px}
+
+/* ---------- Process ---------- */
+.process{display:grid;grid-template-columns:repeat(6,1fr);margin-top:56px;position:relative}
+.process::before{content:"";position:absolute;left:0;right:0;top:9px;height:1px;background:var(--line)}
+.step{padding-right:18px;position:relative}
+.step::before{content:"";display:block;width:19px;height:19px;border-radius:50%;background:var(--paper);border:1px solid var(--gold);margin-bottom:22px;position:relative}
+.step:first-child::before{background:var(--gold)}
+.step small{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.step b{display:block;font-family:var(--serif);font-weight:400;font-size:23px;margin:4px 0 8px}
+.step p{font-size:13.5px;color:var(--ink-soft)}
+
+/* ---------- Terms ---------- */
+.terms{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:50px}
+.pay{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--ink)}
+.pay div{display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line)}
+.pay div b{font-family:var(--serif);font-weight:400;font-size:34px;color:var(--gold);min-width:90px}
+.pay div span{flex:1;font-size:15px;color:var(--ink-soft)}
+.addons{border-top:1px solid var(--ink)}
+.addons div{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--ink-soft)}
+.addons div span:last-child{font-family:var(--serif);font-size:19px;color:var(--ink);white-space:nowrap}
+.fine{font-size:13px;color:var(--muted);margin-top:22px}
+
+/* ---------- Next steps / footer ---------- */
+.next{background:var(--ink);color:var(--paper);border-top:0}
+.next h2{color:var(--paper)}
+.next .lead{color:#c9c1b4}
+.next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:56px}
+.next-grid b{font-family:var(--serif);font-weight:400;font-size:26px;display:block;margin:8px 0}
+.next-grid p{font-size:14.5px;color:#c9c1b4}
+.contact{margin-top:70px;padding-top:34px;border-top:1px solid #3d3830;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:30px}
+.contact .sig{font-family:var(--serif);font-size:44px;font-style:italic;color:var(--gold-soft)}
+.contact a{text-decoration:none;border-bottom:1px solid #5a5248;padding-bottom:2px}
+.contact .lines{font-size:14.5px;line-height:2;color:#c9c1b4;text-align:right}
+footer{background:var(--ink);color:#7a7268;font-size:12px;padding:26px 0 40px;text-align:center;letter-spacing:.08em}
+
+/* ---------- Reveal ---------- */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- Responsive ---------- */
+@media (max-width:980px){
+  .topnav{display:none}
+  .goals{grid-template-columns:1fr 1fr}
+  .opt-body{grid-template-columns:1fr;gap:34px}
+  .facts{grid-template-columns:1fr 1fr}
+  .facts div:nth-child(2){border-right:0}
+  .facts div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .incl{grid-template-columns:1fr 1fr}
+  .process{grid-template-columns:repeat(3,1fr);row-gap:40px}
+  .process::before{display:none}
+  .terms,.next-grid{grid-template-columns:1fr}
+  .cover-meta{grid-template-columns:1fr 1fr}
+  .compare-wrap{overflow-x:auto}
+  .compare{min-width:760px}
+  .price-box{text-align:left}
+}
+@media (max-width:600px){
+  section{padding:76px 0}
+  .goals,.incl{grid-template-columns:1fr}
+  .process{grid-template-columns:1fr 1fr}
+  .btn-print{display:none}
+  .contact .lines{text-align:left}
+}
+
+/* ---------- Print / PDF ---------- */
+@media print{
+  .topbar,.cover-orb{display:none}
+  .reveal{opacity:1;transform:none}
+  section{padding:50px 0;page-break-inside:avoid}
+  .option{page-break-before:always}
+  .next,footer{background:#fff;color:var(--ink)}
+  .next h2,.next-grid p,.next .lead,.contact .lines{color:var(--ink)}
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= TOP BAR ================= -->
+<header class="topbar">
+  <div class="wrap">
+    <div class="brandmark"><span data-k="consultantName">Chris</span> <span style="color:var(--muted)">/</span> Proposal</div>
+    <nav class="topnav">
+      <a href="#brief">Brief</a>
+      <a href="#option-a">Option A</a>
+      <a href="#option-b">Option B</a>
+      <a href="#option-c">Option C</a>
+      <a href="#compare">Compare</a>
+      <a href="#investment">Investment</a>
+    </nav>
+    <div class="tools">
+      <div class="toggle" role="group" aria-label="Currency">
+        <button data-cur="INR">₹ INR</button>
+        <button data-cur="USD">$ USD</button>
+      </div>
+      <button class="btn-print" onclick="window.print()">Save as PDF</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= COVER ================= -->
+<section class="cover">
+  <div class="cover-orb"></div>
+  <div class="wrap">
+    <div class="eyebrow reveal">Website Design &amp; Development Proposal</div>
+    <h1 class="reveal">A digital home for journeys that are <em>never ordinary.</em></h1>
+    <p class="lead reveal">Three distinct creative directions for <strong data-k="clientName">Aurelia Journeys</strong>. Each one is a different idea of how the brand should feel online, with its own scope, timeline and investment. They are not colour variations of one template.</p>
+    <div class="cover-meta reveal">
+      <div><small>Prepared for</small><span data-k="clientName">Aurelia Journeys</span></div>
+      <div><small>Prepared by</small><span data-k="consultantName">Chris</span></div>
+      <div><small>Date</small><span data-k="date">21 November 2026</span></div>
+      <div><small>Valid until</small><span data-k="validUntil">21 December 2026</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BRIEF ================= -->
+<section id="brief">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="num">01</span>Our understanding</div>
+    <h2 class="reveal">Luxury travel is sold on trust, taste and a feeling.</h2>
+    <p class="lead reveal">High-net-worth travellers rarely book a ₹10-lakh journey from a listing page. They book with a consultant whose taste they trust. The website has to make that trust happen before the first call: it should look like the brand, show real expertise, and turn quiet interest into a private consultation.</p>
+    <div class="goals reveal">
+      <div class="goal"><b>Signal exclusivity</b><p>Within five seconds a visitor should feel this is a bespoke atelier, not a package-tour agency.</p></div>
+      <div class="goal"><b>Show the expertise</b><p>Curated journeys, insider stories and destination knowledge that show the depth behind every itinerary.</p></div>
+      <div class="goal"><b>Convert discreetly</b><p>Turn interest into qualified consultation requests through enquiry, WhatsApp and booking, without ever looking pushy.</p></div>
+      <div class="goal"><b>Own it in-house</b><p>The team can update journeys, stories and offers themselves, without a developer for every change.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OPTION A ================= -->
+<section id="option-a" class="option">
+  <div class="wrap">
+    <div class="opt-head reveal">
+      <div>
+        <div class="opt-tag"><span class="eyebrow"><span class="num">02</span>Direction A</span><span class="pill">Fastest to launch</span></div>
+        <h2>The Journal</h2>
+        <div class="tagline">Quiet luxury, told like a travel magazine.</div>
+      </div>
+      <div class="price-box">
+        <small>Investment</small>
+        <div class="price" data-price="A">₹45,000</div>
+        <div class="sub">4–5 weeks · one-time</div>
+      </div>
+    </div>
+
+    <div class="browser reveal">
+      <div class="chrome"><i></i><i></i><i></i><div class="url" data-k="domain">aureliajourneys.com</div></div>
+      <div class="screen">
+        <div class="mA">
+          <div class="mA-nav"><span>Journeys &nbsp;·&nbsp; Journal</span><span class="mA-logo" data-k="clientShort">AURELIA</span><span>About &nbsp;·&nbsp; Enquire</span></div>
+          <div class="mA-hero">
+            <div>
+              <small>Issue No. 12 — The Amalfi Edit</small>
+              <h5>Journeys,<br><em>quietly</em><br>extraordinary.</h5>
+              <p>Private itineraries designed by hand for travellers who value time, privacy and the rare over the remarkable.</p>
+              <span class="mA-link">Begin a conversation</span>
+            </div>
+            <div class="mA-arch"><span class="mA-cap">Positano, 6:40 pm</span></div>
+          </div>
+          <div class="mA-strip">
+            <div><i style="background:linear-gradient(160deg,#b3462f,#5b2017)"></i><div><span>No. 11</span><b>Kyoto in the season of maple</b></div></div>
+            <div><i style="background:linear-gradient(160deg,#5e8a8a,#24433f)"></i><div><span>No. 10</span><b>The quiet atolls of the Maldives</b></div></div>
+            <div><i style="background:linear-gradient(160deg,#c9a46b,#6f5226)"></i><div><span>No. 09</span><b>Rajasthan by private rail</b></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="opt-body reveal">
+      <div>
+        <h4>The idea</h4>
+        <p>The brand is presented like a print travel magazine: generous white space, refined serif type, arched imagery and numbered "issues" for each journey. Nothing shouts. The confidence comes from restraint, and the writing does the selling. Every page is built to show taste and expertise.</p>
+        <div class="dna"><span>Ivory &amp; ink</span><span>Serif-led</span><span>Asymmetric grid</span><span>Story-first</span><span>Static-fast</span></div>
+      </div>
+      <div>
+        <h4>What's included</h4>
+        <ul>
+          <li>Up to 7 pages: Home, Journeys, Journey detail, Journal, About, Enquire, Privacy</li>
+          <li>Journal / blog system for destination stories</li>
+          <li>Curated journey pages (team-editable)</li>
+          <li>Elegant enquiry form plus WhatsApp click-to-chat</li>
+          <li>Newsletter sign-up (Mailchimp / Brevo)</li>
+          <li>Subtle fade and reveal animations</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Choose this if…</h4>
+        <p>You want to be live quickly with a polished, credible presence, and your strength is storytelling and personal relationships. It also works as a phase one that can grow into Direction C later.</p>
+        <h4 style="margin-top:26px">Technology</h4>
+        <p>Astro (static, very fast) · Decap or Sanity CMS · Netlify / Vercel hosting</p>
+      </div>
+    </div>
+    <div class="facts reveal">
+      <div><small>Timeline</small><span>4–5 weeks</span></div>
+      <div><small>Design rounds</small><span>2 revisions</span></div>
+      <div><small>Pages</small><span>Up to 7</span></div>
+      <div><small>Post-launch support</small><span>30 days</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OPTION B ================= -->
+<section id="option-b" class="option">
+  <div class="wrap">
+    <div class="opt-head reveal">
+      <div>
+        <div class="opt-tag"><span class="eyebrow"><span class="num">03</span>Direction B</span><span class="pill solid">Recommended</span></div>
+        <h2>The Voyage</h2>
+        <div class="tagline">Cinematic and immersive. The site feels like the trip.</div>
+      </div>
+      <div class="price-box">
+        <small>Investment</small>
+        <div class="price" data-price="B">₹1,00,000</div>
+        <div class="sub">6–7 weeks · one-time</div>
+      </div>
+    </div>
+
+    <div class="browser reveal">
+      <div class="chrome"><i></i><i></i><i></i><div class="url" data-k="domain">aureliajourneys.com</div></div>
+      <div class="screen">
+        <div class="mB">
+          <div class="mB-dune1"></div><div class="mB-dune2"></div>
+          <div class="mB-nav"><span>Destinations</span><span class="mB-logo" data-k="clientShort">AURELIA</span><span class="mB-menu">Menu <i></i></span></div>
+          <div class="mB-center">
+            <small>Wadi Rum · Jordan</small>
+            <h5>Beyond the Horizon</h5>
+            <div class="mB-line"></div>
+            <div class="mB-play"><i></i>Watch the journey</div>
+          </div>
+          <div class="mB-scroll">Scroll to explore</div>
+          <div class="mB-reel">
+            <div><span>Patagonia</span></div><div><span>Bhutan</span></div><div><span>Santorini</span></div><div><span>Serengeti</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="opt-body reveal">
+      <div>
+        <h4>The idea</h4>
+        <p>A dark, cinematic experience built around full-screen video and scroll-driven storytelling. Each destination opens like a film title sequence: the visitor scrolls through dawn over the dunes, the private camp, and the chef's table under the stars. Gold accents and an elegant display face give the feeling of a first-class cabin. People remember it and share it.</p>
+        <div class="dna"><span>Midnight &amp; gold</span><span>Full-bleed video</span><span>Scroll storytelling</span><span>Parallax</span><span>High emotion</span></div>
+      </div>
+      <div>
+        <h4>What's included</h4>
+        <ul>
+          <li>Up to 10 pages including immersive destination stories</li>
+          <li>Video hero and destination reels (optimised streaming)</li>
+          <li>Scroll-triggered chapter animations (GSAP)</li>
+          <li>Smooth-scroll and custom cursor micro-interactions</li>
+          <li>Multi-step "Design my journey" enquiry with lead qualification</li>
+          <li>WhatsApp, Calendly consultation booking, newsletter</li>
+          <li>Testimonials and press / partner logos section</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Choose this if…</h4>
+        <p>You want a strong emotional pull and clear separation from competitors, and you have (or will source) good video and photography. This direction does best with Instagram and paid social traffic, where first impressions decide everything.</p>
+        <h4 style="margin-top:26px">Technology</h4>
+        <p>Next.js · GSAP + Lenis · Sanity CMS · Cloudinary / Mux video · Vercel</p>
+      </div>
+    </div>
+    <div class="facts reveal">
+      <div><small>Timeline</small><span>6–7 weeks</span></div>
+      <div><small>Design rounds</small><span>3 revisions</span></div>
+      <div><small>Pages</small><span>Up to 10</span></div>
+      <div><small>Post-launch support</small><span>45 days</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OPTION C ================= -->
+<section id="option-c" class="option">
+  <div class="wrap">
+    <div class="opt-head reveal">
+      <div>
+        <div class="opt-tag"><span class="eyebrow"><span class="num">04</span>Direction C</span><span class="pill">Most powerful</span></div>
+        <h2>The Concierge</h2>
+        <div class="tagline">A private journey designer. The website works like a team member.</div>
+      </div>
+      <div class="price-box">
+        <small>Investment</small>
+        <div class="price" data-price="C">₹1,50,000</div>
+        <div class="sub">10–12 weeks · one-time</div>
+      </div>
+    </div>
+
+    <div class="browser reveal">
+      <div class="chrome"><i></i><i></i><i></i><div class="url" data-k="domainPlan">aureliajourneys.com/design-your-journey</div></div>
+      <div class="screen">
+        <div class="mC">
+          <div class="mC-nav"><span class="mC-logo"><span data-k="clientWord">Aurelia</span><span>.</span></span><div class="mC-links"><span>Journeys</span><span>Experiences</span><span>Stories</span><span>My Trips</span></div><span class="mC-cta">Speak to a concierge</span></div>
+          <div class="mC-main">
+            <div class="mC-panel">
+              <div class="mC-step">Step 2 of 4</div>
+              <h6>What should this journey feel like?</h6>
+              <div class="mC-label">Travel style</div>
+              <div class="mC-chips" data-chips>
+                <button class="on">Slow &amp; restorative</button><button>Adventure</button><button class="on">Culinary</button><button>Wildlife</button><button>Celebration</button>
+              </div>
+              <div class="mC-label">Travelling as</div>
+              <div class="mC-chips" data-chips>
+                <button>Solo</button><button class="on">Couple</button><button>Family</button><button>Group</button>
+              </div>
+              <div class="mC-label">Budget per person</div>
+              <div class="mC-range"></div>
+              <div class="mC-rangev"><span>₹3L</span><span>₹8L</span><span>₹15L+</span></div>
+              <div class="mC-go">Continue to dates →</div>
+            </div>
+            <div class="mC-right">
+              <div class="mC-map">
+                <span class="mC-maptag">Japan · 12 nights · draft itinerary</span>
+                <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M18 34 C 32 20, 44 30, 56 22 S 78 14, 84 26" fill="none" stroke="#c0794a" stroke-width=".5" stroke-dasharray="1.4 1"/><circle cx="18" cy="34" r="1.3" fill="#17312b"/><circle cx="56" cy="22" r="1.3" fill="#17312b"/><circle cx="84" cy="26" r="1.3" fill="#c0794a"/></svg>
+              </div>
+              <div class="mC-days">
+                <div class="mC-day"><i style="background:linear-gradient(140deg,#e9b9a3,#b5574a)"></i><small>Days 1–4</small><b>Tokyo, private ryokan &amp; omakase</b></div>
+                <div class="mC-day"><i style="background:linear-gradient(140deg,#d4a35f,#8a3d23)"></i><small>Days 5–9</small><b>Kyoto, temples at dawn</b></div>
+                <div class="mC-day"><i style="background:linear-gradient(140deg,#9fc1c2,#3c6c6a)"></i><small>Days 10–12</small><b>Naoshima, art island</b></div>
+              </div>
+            </div>
+          </div>
+          <div class="mC-wa">Your concierge is online</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="opt-body reveal">
+      <div>
+        <h4>The idea</h4>
+        <p>A bright, modern product experience built around one tool: an interactive journey designer. Visitors choose a mood, companions, dates and budget, and get a beautiful draft itinerary with a map that your consultants then refine. Every enquiry arrives pre-qualified in your CRM, and returning clients get a private portal with their itineraries, documents and live updates.</p>
+        <div class="dna"><span>Light &amp; botanical</span><span>Product UI</span><span>Interactive tool</span><span>Client portal</span><span>Data-driven</span></div>
+      </div>
+      <div>
+        <h4>What's included</h4>
+        <ul>
+          <li>Everything in Direction A's content structure</li>
+          <li>4-step journey designer with live itinerary preview and map</li>
+          <li>Private client portal: login, trips, documents, payment status</li>
+          <li>CRM integration (Zoho / HubSpot) with lead scoring</li>
+          <li>Deposit payments via Razorpay / Stripe</li>
+          <li>WhatsApp Business integration and consultation scheduling</li>
+          <li>Admin dashboard to manage journeys, enquiries and clients</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Choose this if…</h4>
+        <p>Enquiry volume is growing, your team spends hours qualifying leads, and you want the website to act as a sales and service tool. It suits an agency planning to scale beyond word of mouth.</p>
+        <h4 style="margin-top:26px">Technology</h4>
+        <p>Next.js · Sanity CMS · Supabase (Postgres + Auth) · Mapbox · Razorpay / Stripe · CRM &amp; WhatsApp APIs</p>
+      </div>
+    </div>
+    <div class="facts reveal">
+      <div><small>Timeline</small><span>10–12 weeks</span></div>
+      <div><small>Design rounds</small><span>3 revisions</span></div>
+      <div><small>Pages + app</small><span>12 + portal</span></div>
+      <div><small>Post-launch support</small><span>60 days</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPARE ================= -->
+<section id="compare">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="num">05</span>Side by side</div>
+    <h2 class="reveal">Three different answers to one question.</h2>
+    <p class="lead reveal">How should a prospective client feel in the first ten seconds? Each direction answers it differently, and the differences go well beyond colour.</p>
+    <div class="compare-wrap reveal">
+      <table class="compare">
+        <thead>
+          <tr><th></th><th><small>Direction A</small>The Journal</th><th class="rec"><small>Direction B · Recommended</small>The Voyage</th><th><small>Direction C</small>The Concierge</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>First feeling</th><td>"These people have impeccable taste."</td><td class="rec">"I need to go there."</td><td>"They've already started planning my trip."</td></tr>
+          <tr><th>Visual language</th><td>Ivory, ink, serif, arched frames, magazine grid</td><td class="rec">Midnight and gold, full-bleed video, display type</td><td>Light, botanical tones, rounded product UI, maps</td></tr>
+          <tr><th>How it engages</th><td>Reading and storytelling</td><td class="rec">Watching and scrolling through chapters</td><td>Doing: building a journey interactively</td></tr>
+          <tr><th>Lead capture</th><td>Elegant enquiry form, WhatsApp</td><td class="rec">Multi-step qualified enquiry, booking</td><td>Journey designer, CRM, lead scoring, deposits</td></tr>
+          <tr><th>Content needed</th><td>Good photos and writing</td><td class="rec">Video and premium photography</td><td>Journey data, pricing bands, workflows</td></tr>
+          <tr><th>Team can edit</th><td>Journeys, Journal</td><td class="rec">Journeys, stories, videos, offers</td><td>Everything, plus clients and enquiries</td></tr>
+          <tr><th>Timeline</th><td>4–5 weeks</td><td class="rec">6–7 weeks</td><td>10–12 weeks</td></tr>
+          <tr class="big"><th>Investment</th><td data-price="A">₹1,20,000</td><td class="rec" data-price="B">₹2,40,000</td><td data-price="C">₹4,80,000</td></tr>
+          <tr><th>Care plan (optional)</th><td data-care="A">₹6,000 / month</td><td class="rec" data-care="B">₹12,000 / month</td><td data-care="C">₹20,000 / month</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INCLUDED ================= -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="num">06</span>In every direction</div>
+    <h2 class="reveal">The essentials, done properly.</h2>
+    <div class="incl reveal">
+      <div><b>Fully responsive</b><p>Designed mobile-first. Most luxury enquiries now start on a phone.</p></div>
+      <div><b>Performance</b><p>Lighthouse score of 90+ target, optimised images and lazy-loaded media.</p></div>
+      <div><b>SEO foundation</b><p>Semantic structure, meta tags, schema markup, sitemap and Google Search Console set-up.</p></div>
+      <div><b>Analytics</b><p>GA4 and Meta Pixel with conversion tracking on every enquiry.</p></div>
+      <div><b>Security &amp; privacy</b><p>SSL, spam protection, cookie consent and a privacy policy page.</p></div>
+      <div><b>Hosting &amp; domain set-up</b><p>Deployment, domain connection and professional email guidance.</p></div>
+      <div><b>Accessibility</b><p>WCAG 2.1 AA practices for contrast, keyboard navigation and alt text.</p></div>
+      <div><b>Training</b><p>A recorded walkthrough so your team can update content with confidence.</p></div>
+      <div><b>Source ownership</b><p>You own the code, design files and content once the final payment is made.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="num">07</span>How we'll work</div>
+    <h2 class="reveal">A clear path from first call to launch.</h2>
+    <div class="process reveal">
+      <div class="step"><small>Week 1</small><b>Discovery</b><p>Brand workshop, audience, competitors, sitemap and content plan.</p></div>
+      <div class="step"><small>Week 1–2</small><b>Design</b><p>Homepage concept in Figma, refined with your feedback.</p></div>
+      <div class="step"><small>Week 2–3</small><b>Full UI</b><p>All key pages designed for desktop and mobile, then approved.</p></div>
+      <div class="step"><small>Build</small><b>Development</b><p>Front-end, CMS, integrations. Weekly preview links.</p></div>
+      <div class="step"><small>Pre-launch</small><b>Content &amp; QA</b><p>Content loading, cross-device testing, speed and SEO checks.</p></div>
+      <div class="step"><small>Launch</small><b>Go live &amp; care</b><p>Launch, training, then a support window and optional care plan.</p></div>
+    </div>
+    <p class="fine reveal">Week ranges are shown for Direction A. B and C follow the same stages with longer build phases.</p>
+  </div>
+</section>
+
+<!-- ================= INVESTMENT / TERMS ================= -->
+<section id="investment">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="num">08</span>Investment &amp; terms</div>
+    <h2 class="reveal">Simple, milestone-based payments.</h2>
+    <div class="terms reveal">
+      <div>
+        <h4 class="eyebrow" style="margin-bottom:14px">Payment schedule</h4>
+        <div class="pay">
+          <div><b>40%</b><span>On signing, to reserve the slot and begin discovery</span></div>
+          <div><b>40%</b><span>On design approval, before development starts</span></div>
+          <div><b>20%</b><span>On launch, before the site goes live on your domain</span></div>
+        </div>
+        <p class="fine">Prices exclude GST / applicable taxes, third-party costs (hosting beyond free tiers, premium fonts, stock media, paid plugins) and content creation unless added below. Quote valid for 30 days.</p>
+      </div>
+      <div>
+        <h4 class="eyebrow" style="margin-bottom:14px">Optional add-ons</h4>
+        <div class="addons">
+          <div><span>Luxury copywriting (per page)</span><span data-addon="copy">₹4,000</span></div>
+          <div><span>Stock photo / video curation and licensing support</span><span data-addon="media">₹12,000</span></div>
+          <div><span>Logo refresh &amp; mini brand guide</span><span data-addon="brand">₹25,000</span></div>
+          <div><span>Additional language (e.g. Arabic, French)</span><span data-addon="lang">₹18,000</span></div>
+          <div><span>Additional page beyond scope</span><span data-addon="page">₹6,000</span></div>
+          <div><span>Monthly SEO &amp; blog support</span><span data-addon="seo">₹15,000 / mo</span></div>
+        </div>
+        <p class="fine">Directions can be combined. For example, launch with A now and add C's journey designer as phase two. Investment already paid counts toward the upgrade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NEXT STEPS ================= -->
+<section class="next">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="num" style="color:var(--gold-soft)">09</span>Next steps</div>
+    <h2 class="reveal">Let's begin the journey.</h2>
+    <p class="lead reveal">Choose the direction that feels most like <span data-k="clientName">Aurelia Journeys</span>, or tell me what you'd combine. I'll send a short agreement and we can hold the discovery workshop this week.</p>
+    <div class="next-grid reveal">
+      <div><span class="eyebrow">Step one</span><b>Pick a direction</b><p>Reply with A, B, C or a mix. Happy to walk you through each on a 20-minute call.</p></div>
+      <div><span class="eyebrow">Step two</span><b>Confirm &amp; kick off</b><p>Sign the agreement and pay the first milestone. Discovery starts within 3 working days.</p></div>
+      <div><span class="eyebrow">Step three</span><b>See your homepage</b><p>A first homepage concept in your hands by the end of week two.</p></div>
+    </div>
+    <div class="contact reveal">
+      <div>
+        <div class="sig" data-k="consultantName">Prem</div>
+        <div style="color:#a59c8f;font-size:14px" data-k="consultantRole">Full-stack Developer &amp; Web Designer</div>
+      </div>
+      <div class="lines">
+        <a data-k="email" data-href="mailto" href="mailto:psarojanand@gmail.com">psarojanand@gmail.com</a><br>
+        <a data-k="phone" data-href="tel" href="tel:+919512472957">+91 9512472957</a><br>
+        <a data-k="github" data-href="url" href="https://github.com/your-username">github.com/your-username</a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>© <span data-k="year">2026</span> <span data-k="consultantName">Chris</span> · Proposal prepared exclusively for <span data-k="clientName">Aurelia Journeys</span> · Mockups are concept illustrations</footer>
+
+<script>
+/* =========================================================
+   CONFIG: edit these values and everything updates.
+   ========================================================= */
+const CONFIG = {
+  clientName:     "Aurelia Journeys",     // full client / brand name
+  clientShort:    "AURELIA",              // wordmark used in mockups A & B
+  clientWord:     "Aurelia",              // wordmark used in mockup C
+  domain:         "aureliajourneys.com",
+  consultantName: "Prem Sarojanand",
+  consultantRole: "Full-stack Developer & Web Designer",
+  email:          "psarojanand@gmail.com",
+  phone:          "+91 9512472957",
+  github:         "github.com/your-username",
+  date:           "21 November 2026",
+  validUntil:     "21 December 2026",
+  defaultCurrency:"INR",                  // "INR" or "USD"
+  prices: { // one-time project fees
+    INR: { A: 45000, B: 100000, C: 150000 },
+    USD: { A: 1450,   B: 2900,   C: 5800   }
+  },
+  care: {   // yearly care plans
+    INR: { A: 6000,  B: 12000, C: 20000 },
+    USD: { A: 75,    B: 150,   C: 250   }
+  },
+  addons: {
+    INR: { copy: 4000, media: 12000, brand: 25000, lang: 18000, page: 6000, seo: 15000 },
+    USD: { copy: 50,   media: 150,   brand: 300,   lang: 220,   page: 75,   seo: 180   }
+  }
+};
+
+/* ---------- apply text config ---------- */
+const derived = { domainPlan: CONFIG.domain + "/design-your-journey", year: new Date().getFullYear() };
+document.querySelectorAll("[data-k]").forEach(el => {
+  const k = el.dataset.k, v = CONFIG[k] ?? derived[k];
+  if (v === undefined) return;
+  el.textContent = v;
+  if (el.dataset.href === "mailto") el.href = "mailto:" + v;
+  if (el.dataset.href === "tel") el.href = "tel:" + String(v).replace(/\s/g, "");
+  if (el.dataset.href === "url") el.href = "https://" + String(v).replace(/^https?:\/\//, "");
+});
+document.title = "Website Proposal — " + CONFIG.clientName;
+
+/* ---------- currency ---------- */
+const fmt = (n, cur) => cur === "INR"
+  ? "₹" + n.toLocaleString("en-IN")
+  : "$" + n.toLocaleString("en-US");
+function setCurrency(cur){
+  document.querySelectorAll("[data-price]").forEach(el => el.textContent = fmt(CONFIG.prices[cur][el.dataset.price], cur));
+  document.querySelectorAll("[data-care]").forEach(el => el.textContent = fmt(CONFIG.care[cur][el.dataset.care], cur) + " / month");
+  document.querySelectorAll("[data-addon]").forEach(el => {
+    const k = el.dataset.addon;
+    el.textContent = fmt(CONFIG.addons[cur][k], cur) + (k === "seo" ? " / mo" : "");
+  });
+  document.querySelectorAll("[data-cur]").forEach(b => b.classList.toggle("on", b.dataset.cur === cur));
+}
+document.querySelectorAll("[data-cur]").forEach(b => b.addEventListener("click", () => setCurrency(b.dataset.cur)));
+setCurrency(CONFIG.defaultCurrency);
+
+/* ---------- mockup C chips are clickable ---------- */
+document.querySelectorAll("[data-chips] button").forEach(b => b.addEventListener("click", () => b.classList.toggle("on")));
+
+/* ---------- scroll reveal ---------- */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
